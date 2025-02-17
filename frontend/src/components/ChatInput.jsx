@@ -16,7 +16,7 @@ const ChatInput = ({ user, clickedUser, getUserMessages, getClickedUsersMessages
         }
 
         try {
-            await axios.post('http://localhost:8000/message', { message })
+            await axios.post('https://dating-app-project-backend.onrender.com/message', { message })
             getUserMessages()
             getClickedUsersMessages()
             setTextArea("") // Clear input after sending message
