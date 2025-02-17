@@ -14,7 +14,7 @@ const ChatDisplay = ({ user, clickedUser }) => {
     // Fetch messages sent by the current user
     const getUsersMessages = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/messages', {
+            const response = await axios.get('https://dating-app-project-backend.onrender.com/messages', {
                 params: { userId: userId, correspondingUserId: clickedUserId }
             })
             setUsersMessages(response.data)
@@ -26,7 +26,7 @@ const ChatDisplay = ({ user, clickedUser }) => {
     // Fetch messages sent by the clicked user
     const getClickedUsersMessages = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/messages', {
+            const response = await axios.get('https://dating-app-project-backend.onrender.com/messages', {
                 params: { userId: clickedUserId, correspondingUserId: userId }
             })
             setClickedUsersMessages(response.data)
