@@ -26,7 +26,7 @@ const AuthModal = ({ setShowModal, isSignUp }) => {
 
         try {
             const response = await axios.post(
-                `http://localhost:8000/${isSignUp ? 'signup' : 'login'}`,
+                `https://dating-app-project-backend.onrender.com/${isSignUp ? 'signup' : 'login'}`,
                 { email, password }
             )
 
