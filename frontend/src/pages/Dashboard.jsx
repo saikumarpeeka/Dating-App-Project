@@ -15,7 +15,7 @@ const Dashboard = () => {
     // Fetch logged-in user details
     const getUser = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/user', {
+            const response = await axios.get('https://dating-app-project-backend.onrender.com/user', {
                 params: { userId }
             })
             setUser(response.data)
@@ -27,7 +27,7 @@ const Dashboard = () => {
     // Fetch users based on gender preference
     const getGenderedUsers = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/gendered-users', {
+            const response = await axios.get('https://dating-app-project-backend.onrender.com/gendered-users', {
                 params: { gender: user?.gender_interest }
             })
             setGenderedUsers(response.data)
@@ -51,7 +51,7 @@ const Dashboard = () => {
     // Update matches when a user swipes right
     const updateMatches = async (matchedUserId) => {
         try {
-            await axios.put('http://localhost:8000/addmatch', { userId, matchedUserId })
+            await axios.put('https://dating-app-project-backend.onrender.com/addmatch', { userId, matchedUserId })
             getUser() // Refresh user data after updating matches
         } catch (err) {
             console.log(err)
